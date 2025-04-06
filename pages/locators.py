@@ -5,3 +5,4 @@ class ProductPageLocators:
     PRODUCT_NAME_MESSAGE = (By.CSS_SELECTOR, "#messages .alert:first-child .alertinner strong")
     PRODUCT_COST = (By.CSS_SELECTOR, ".product_main .price_color")
     BASKET_COST_MESSAGE = (By.CSS_SELECTOR, "#messages .alert:nth-child(3) .alertinner strong")
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR, ".alert-success")
