@@ -15,3 +15,10 @@ class LoginPage(BasePage):
 
     def should_be_register_form(self):
         assert self.is_element_present(*LoginPageLocators.REGISTER_FORM), "Не найдена форма регистрации"
+
+    def register_new_user(self, email, password):
+        self.input_data(*LoginPageLocators.REGISTER_EMAIL, email)
+        self.input_data(*LoginPageLocators.REGISTER_PASSWD1, password)
+        self.input_data(*LoginPageLocators.REGISTER_PASSWD2, password)
+        self.interact(*LoginPageLocators.REGISTER_BUTTON)
+

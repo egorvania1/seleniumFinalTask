@@ -62,3 +62,16 @@ class BasePage():
         link = self.browser.find_element(*BasePageLocators.BASKET_LINK)
         link.click()
 
+    def should_be_authorized_user(self):
+        assert self.is_element_present(*BasePageLocators.USER_ICON), "Иконка пользователя не предоставлена, скорее всего неавторизованный пользователь"
+
+    def input_data(self, how, what, data):
+        some_element = self.browser.find_element(how, what)
+        some_element.send_keys(data)
+
+    def interact(self, how, what):
+        some_element = self.browser.find_element(how, what)
+        some_element.click()
+
+    def should_be_logged_in(self, timeout=4):
+        assert self.is_element_present(*BasePageLocators.USER_ICON), "Вход в аккаунт не был выполнен"
